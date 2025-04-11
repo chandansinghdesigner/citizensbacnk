@@ -1,0 +1,413 @@
+/* ==========================================================================
+   Citizens Bank Styles - Responsive Implementation
+   ========================================================================== */
+
+/* Base Styles - Matches template typography exactly */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$primary-blue: #005eb8;
+$dark-orange: #eb6f00;
+$medium-gray: #9e9d9d;
+$light-gray: #f5f5f5;
+$success-green: #05aa6e;
+
+.p-t-0 {
+    padding-top: 0 !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $medium-gray;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    height: auto;
+
+    .logo {
+        margin: 0;
+        padding: 0;
+
+        img {
+            display: block;
+            height: auto;
+            width: 180px;
+            max-width: 100%;
+        }
+    }
+}
+
+/* Slider Section */
+.hero-slider {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Hero Section */
+.hero {
+    padding: 40px 0;
+    text-align: center;
+
+    .heading-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .hero-text {
+        margin: 0 auto 25px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: $medium-gray;
+        text-align: left;
+        max-width: 800px;
+        padding: 0 15px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: $dark-orange;
+        color: white;
+        padding: 10px 24px;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $success-green;
+        }
+    }
+}
+
+.heading-title {
+    color: $success-green;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 2px;
+        background-color: $success-green;
+    }
+}
+
+/* Advantages Section */
+.advantages-section {
+    padding: 40px 0;
+    padding-top: 0;
+
+    .advantages-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0;
+        }
+    }
+
+    .advantage-card {
+        padding: 20px;
+        position: relative;
+        border-radius: 5px;
+
+        &::before {
+            display: none;
+            @media (min-width: 1024px) {
+                display: block;
+                content: "";
+                position: absolute;
+                left: 90%;
+                transform: rotateZ(90deg);
+                width: 120px;
+                height: 2px;
+                background-color: $medium-gray;
+                top: 43%;
+            }
+        }
+
+        &:nth-child(2)::before {
+            @media (min-width: 1024px) {
+                display: none;
+            }
+        }
+
+        &:last-child::before {
+            @media (min-width: 1024px) {
+                display: none;
+            }
+        }
+
+        .advantage-title {
+            color: $success-green;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .advantage-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .inline-link {
+            color: $success-green;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/* Brand Section */
+.brand-section {
+    padding: 40px 0;
+
+    .section-title {
+        color: $light-gray;
+        font-size: 24px;
+        font-weight: 400;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 0;
+        background-color: $success-green;
+    }
+
+    .brand-text {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        background: #ebf7f5;
+        padding: 15px;
+    }
+
+    .testimonials {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0;
+        }
+
+        .testimonial {
+            padding: 20px;
+            margin-bottom: 0;
+            text-align: center;
+
+            img {
+                margin-bottom: 10px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+
+                @media (min-width: 1024px) {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+
+            .testimonial-text {
+                font-style: italic;
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+
+            .testimonial-author {
+                font-weight: 300;
+                font-size: 13px;
+                color: $success-green;
+            }
+        }
+    }
+}
+
+/* Footer */
+.site-footer {
+    color: $medium-gray;
+    background: #f5f5f5;
+    padding: 30px 0;
+    border-top: 1.5px solid $success-green;
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        margin: 0 5px;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+
+    .social-link:nth-child(1) {
+        background-color: #3c5b9b;
+    }
+
+    .social-link:nth-child(2) {
+        background-color: #2fa9e8;
+    }
+
+    .social-link:nth-child(3) {
+        background-color: #0076b0;
+    }
+
+    .social-link:nth-child(4) {
+        background-color: #e64e41;
+    }
+
+    .legal-text {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .footer-links {
+        text-align: center;
+        padding: 0 15px;
+
+        a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 14px;
+
+            &:hover {
+                text-decoration: underline;
+                color: $success-green;
+            }
+        }
+
+        .divider {
+            margin: 0 5px;
+            color: #999;
+        }
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .hero {
+        padding: 50px 0;
+
+        .heading-title {
+            font-size: 32px;
+        }
+    }
+
+    .site-header {
+        padding: 20px 0;
+        height: 80px;
+
+        .logo img {
+            width: 250px;
+        }
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 60px 0;
+
+        .hero-text {
+            font-size: 15.5px;
+            line-height: 1.8;
+            padding: 0;
+        }
+    }
+
+    .advantages-section {
+        padding: 60px 0;
+
+        .advantages-grid {
+            gap: 30px;
+        }
+
+        .advantage-card {
+            padding: 25px;
+        }
+    }
+
+    .brand-section {
+        padding: 60px 0;
+
+        .section-title {
+            font-size: 32px;
+        }
+
+        .brand-text {
+            font-size: 17px;
+            line-height: 1.7;
+            padding: 20px 30px;
+        }
+
+        .testimonials {
+            margin-top: 50px;
+            gap: 30px;
+        }
+    }
+
+    .site-footer {
+        padding: 40px 0;
+
+        .social-links {
+            justify-content: start;
+        }
+    }
+}
